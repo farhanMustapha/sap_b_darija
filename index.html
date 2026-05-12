@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Discovering Finance - SAP S/4HANA</title>
+  <meta name="description" content="تطبيق تعليمي لاكتشاف المالية في SAP S/4HANA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="sidebar-overlay" onclick="appToggleSidebar()"></div>
+
+  <div class="app-container">
+    <!-- =============== SIDEBAR =============== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">S4</div>
+        <div class="sidebar-title">
+          <h1>Discovering Finance</h1>
+          <span>SAP S/4HANA</span>
+        </div>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-label">
+          <span>التقدم العام</span>
+          <span class="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- Unit 1 -->
+        <div class="nav-unit">
+          <div class="nav-unit-header expanded" id="nav-unit-header-1" onclick="appToggleUnit(1)">
+            <span>📊</span>
+            <span>الوحدة 1: Record to Report</span>
+            <span class="chevron">◀</span>
+          </div>
+          <div class="nav-unit-items expanded" id="nav-unit-items-1">
+            <div class="nav-lesson" data-id="u1-l1-s1" onclick="appNav('u1-l1-s1')"><span
+                class="lesson-icon"></span>مراحل R2R وحلول SAP</div>
+            <div class="nav-lesson" data-id="u1-l1-s2" onclick="appNav('u1-l1-s2')"><span
+                class="lesson-icon"></span>Universal Journal</div>
+            <div class="nav-lesson" data-id="u1-l2-s2" onclick="appNav('u1-l2-s2')"><span
+                class="lesson-icon"></span>Parallel Accounting</div>
+            <div class="nav-lesson" data-id="u1-l2-s3" onclick="appNav('u1-l2-s3')"><span
+                class="lesson-icon"></span>Segment Reporting</div>
+            <div class="nav-lesson" data-id="u1-l2-s4" onclick="appNav('u1-l2-s4')"><span
+                class="lesson-icon"></span>Profit Centers</div>
+            <div class="nav-lesson" data-id="u1-l2-s5" onclick="appNav('u1-l2-s5')"><span
+                class="lesson-icon"></span>Cost of Sales</div>
+            <div class="nav-lesson" data-id="u1-l3-s1" onclick="appNav('u1-l3-s1')"><span class="lesson-icon"></span>GL
+              & Sub-ledgers</div>
+            <div class="nav-lesson" data-id="u1-l3-s2" onclick="appNav('u1-l3-s2')"><span
+                class="lesson-icon"></span>الهيكل التنظيمي</div>
+          </div>
+        </div>
+
+        <!-- Unit 2 -->
+        <div class="nav-unit">
+          <div class="nav-unit-header expanded" id="nav-unit-header-2" onclick="appToggleUnit(2)">
+            <span>💳</span>
+            <span>الوحدة 2: Payables Management</span>
+            <span class="chevron">◀</span>
+          </div>
+          <div class="nav-unit-items expanded" id="nav-unit-items-2">
+            <div class="nav-lesson" data-id="u2-l1-s1" onclick="appNav('u2-l1-s1')"><span
+                class="lesson-icon"></span>إدارة الموردين</div>
+            <div class="nav-lesson" data-id="u2-l1-s2" onclick="appNav('u2-l1-s2')"><span
+                class="lesson-icon"></span>التسوية والـ KPIs</div>
+          </div>
+        </div>
+
+        <!-- Unit 6 -->
+        <div class="nav-unit">
+          <div class="nav-unit-header expanded" id="nav-unit-header-6" onclick="appToggleUnit(6)">
+            <span>🏢</span>
+            <span>الوحدة 6: إدارة الأصول الثابتة</span>
+            <span class="chevron">◀</span>
+          </div>
+          <div class="nav-unit-items expanded" id="nav-unit-items-6">
+            <div class="nav-lesson" data-id="u6-l1-s1" onclick="appNav('u6-l1-s1')"><span
+                class="lesson-icon"></span>دورة حياة الأصل</div>
+            <div class="nav-lesson" data-id="u6-l1-s2" onclick="appNav('u6-l1-s2')"><span
+                class="lesson-icon"></span>البيانات الأساسية</div>
+            <div class="nav-lesson" data-id="u6-l1-s3" onclick="appNav('u6-l1-s3')"><span
+                class="lesson-icon"></span>حساب الإهلاك</div>
+            <div class="nav-lesson" data-id="u6-l1-s4" onclick="appNav('u6-l1-s4')"><span
+                class="lesson-icon"></span>الارتباط بالمحاسبة</div>
+          </div>
+        </div>
+
+        <!-- Unit 8 -->
+        <div class="nav-unit">
+          <div class="nav-unit-header expanded" id="nav-unit-header-8" onclick="appToggleUnit(8)">
+            <span>📈</span>
+            <span>الوحدة 8: التكاليف والربحية</span>
+            <span class="chevron">◀</span>
+          </div>
+          <div class="nav-unit-items expanded" id="nav-unit-items-8">
+            <div class="nav-lesson" data-id="u8-l1-s1" onclick="appNav('u8-l1-s1')"><span
+                class="lesson-icon"></span>Management Accounting</div>
+            <div class="nav-lesson" data-id="u8-l1-s2" onclick="appNav('u8-l1-s2')"><span
+                class="lesson-icon"></span>الفرق بين FI و CO</div>
+            <div class="nav-lesson" data-id="u8-l1-s3" onclick="appNav('u8-l1-s3')"><span
+                class="lesson-icon"></span>هندسة Controlling</div>
+            <div class="nav-lesson" data-id="u8-l1-s4" onclick="appNav('u8-l1-s4')"><span
+                class="lesson-icon"></span>Universal Journal</div>
+            <div class="nav-lesson" data-id="u8-l1-s5" onclick="appNav('u8-l1-s5')"><span class="lesson-icon"></span>UPA
+              المتوازية</div>
+            <div class="nav-lesson" data-id="u8-l1-s6" onclick="appNav('u8-l1-s6')"><span
+                class="lesson-icon"></span>Profit Center Accounting</div>
+            <div class="nav-lesson" data-id="u8-l3-s1" onclick="appNav('u8-l3-s1')"><span class="lesson-icon"></span>CDS
+              Views</div>
+            <div class="nav-lesson" data-id="u8-l3-s2" onclick="appNav('u8-l3-s2')"><span
+                class="lesson-icon"></span>Embedded Reporting</div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- =============== MAIN =============== -->
+    <div class="main-content">
+      <header class="content-header">
+        <button class="menu-toggle" onclick="appToggleSidebar()">☰</button>
+        <div class="breadcrumbs"><span class="current">🏠 الرئيسية</span></div>
+      </header>
+
+      <!-- ═══════════ HOME ═══════════ -->
+      <div id="home-view" class="view-page home-view">
+        <div class="home-hero">
+          <div class="home-hero-icon">📚</div>
+          <h2>Discovering Finance</h2>
+          <p>اكتشف عالم المالية في SAP S/4HANA – دروس تفاعلية بالدارجة المغربية</p>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-number" id="stat-done">0</div>
+            <div class="stat-label">مكتملة</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="stat-total">18</div>
+            <div class="stat-label">دروس</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="stat-percent">0%</div>
+            <div class="stat-label">التقدم</div>
+          </div>
+        </div>
+
+        <div class="units-grid">
+          <div class="unit-card" onclick="appNav('u1-l1-s1')">
+            <div class="unit-card-num">1</div>
+            <div class="unit-card-info">
+              <h3>Outlining Processes in Record to Report</h3>
+              <p>عملية R2R، Universal Journal، التقارير القطاعية، Profit Centers، والهيكل التنظيمي</p>
+              <div class="unit-card-meta">
+                <span>📖 8 دروس</span>
+              </div>
+            </div>
+            <span class="unit-card-arrow">◀</span>
+          </div>
+
+          <div class="unit-card" onclick="appNav('u2-l1-s1')">
+            <div class="unit-card-num">2</div>
+            <div class="unit-card-info">
+              <h3>Outlining Processes in Payables Management</h3>
+              <p>إدارة الموردين، Business Partner، دورة حياة الفاتورة، والذكاء الاصطناعي</p>
+              <div class="unit-card-meta">
+                <span>📖 2 دروس</span>
+              </div>
+            </div>
+            <span class="unit-card-arrow">◀</span>
+          </div>
+
+          <div class="unit-card" onclick="appNav('u6-l1-s1')">
+            <div class="unit-card-num">6</div>
+            <div class="unit-card-info">
+              <h3>Outlining Processes in Asset Accounting</h3>
+              <p>إدارة الأصول الثابتة، البيانات الأساسية، حساب الإهلاك، والارتباط بـ General Ledger</p>
+              <div class="unit-card-meta">
+                <span>📖 4 دروس</span>
+              </div>
+            </div>
+            <span class="unit-card-arrow">◀</span>
+          </div>
+
+          <div class="unit-card" onclick="appNav('u8-l1-s1')">
+            <div class="unit-card-num">8</div>
+            <div class="unit-card-info">
+              <h3>Outlining Cost Management and Profitability Analysis</h3>
+              <p>Management Accounting، Controlling، Universal Journal، التقارير المدمجة</p>
+              <div class="unit-card-meta">
+                <span>📖 8 دروس</span>
+              </div>
+            </div>
+            <span class="unit-card-arrow">◀</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u1-l1-s1 ═══════════ -->
+      <div id="lesson-u1-l1-s1" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📊 الوحدة 1 – الدرس 1</div>
+          <h2>مراحل عملية Record to Report وحلول SAP</h2>
+          <p>تعرف على السلسلة الكاملة من تسجيل العمليات المالية حتى إخراج التقارير النهائية</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header" id="section-header-u1s1a" onclick="appToggleSection('u1s1a')">
+              <span class="section-num">1</span>
+              <h3>مراحل عملية Record to Report (R2R)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body" id="section-body-u1s1a">
+              <div class="section-content">
+                <p>هاد العملية مقسمة لـ <span class="term">6 مراحل</span> أساسية:</p>
+
+                <h4>1. التسجيل <span class="term-en">Record</span></h4>
+                <p>هنا كيتسجلوا كاع العمليات اليومية (مشتريات، مبيعات، مصاريف). الهدف هو تعمّر <span class="term">الدفتر
+                    العام</span> (<span class="term-en">General Ledger</span>) وتأكد باللي كاع <span
+                    class="term-en">Journal Entries</span> داخلين مزيان.</p>
+
+                <h4>2. إغلاق الكيان <span class="term-en">Entity Close</span></h4>
+                <p>فاش كيسالي الشهر أو العام، خاصنا نسدو الحسابات ديال ديك الشركة بوحدها. كنديرو التسوية (<span
+                    class="term-en">Reconciliation</span>) ما بين الحسابات الفرعية (<span
+                    class="term-en">Sub-ledgers</span>) بحال الموردين والكليان مع الدفتر العام.</p>
+
+                <h4>3. التجميع <span class="term-en">Consolidation</span></h4>
+                <p>إلا كانت الشركة عندها فروع بزاف، هنا كنجمعوا الحسابات ديالهم كاملين. كنحيدو العمليات اللي دازت بين
+                  الشركات ديال نفس المجموعة (<span class="term-en">Inter-entity</span>) باش ما يتحسبوش دوبل.</p>
+
+                <h4>4. إغلاق المجموعة <span class="term-en">Corporate Close</span></h4>
+                <p>هنا المحاسب ديال المجموعة (<span class="term-en">Group Accountant</span>) كيشوف واش كاع الفروع سدوا
+                  حساباتهم وكيدير التعديلات النهائية قبل ما يخرج الأرقام الرسمية.</p>
+
+                <h4>5. التقارير <span class="term-en">Reporting</span></h4>
+                <p>هنا كنخرجو النتائج النهائية بحال <span class="term-en">P&L</span> و <span class="term-en">Balance
+                    Sheet</span>. هاد التقارير كيعاونوا الإدارة باش تاخد قرارات.</p>
+
+                <h4>6. تقديم التقارير القانونية <span class="term-en">Regulatory Submissions</span></h4>
+                <p>المرحلة الأخيرة هي نصيفطو التقارير للدولة (الضرائب، الهيئات التنظيمية) ونأكدوا باللي الشركة محترمة
+                  القانون.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header" id="section-header-u1s1b" onclick="appToggleSection('u1s1b')">
+              <span class="section-num">2</span>
+              <h3>حلول SAP لهاد العملية</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body" id="section-body-u1s1b">
+              <div class="section-content">
+                <p>SAP موفرة بزاف ديال الأدوات باش تسهل هاد الخدمة:</p>
+                <ul>
+                  <li><span class="term">SAP S/4HANA:</span> هو السيستيم الكبير (<span class="term-en">ERP</span>) اللي
+                    كايجمع كاع هادشي فبلاصا وحدة وبسرعة كبيرة حيت كيخدم بتقنية <span class="term-en">HANA
+                      (In-memory)</span>.</li>
+                  <li><span class="term">Central Finance:</span> هادي إضافة زوينة للشركات اللي عندها بزاف ديال الأنظمة
+                    مختلفة؛ كتجمع كاع البيانات المالية فـ S/4HANA واحد بلا ما تحبس الخدمة فالأنظمة القديمة.</li>
+                  <li><span class="term">Group Reporting:</span> مخصص للتجميع (<span
+                      class="term-en">Consolidation</span>) ديال حسابات الشركات التابعة للمجموعة.</li>
+                  <li><span class="term">Financial Closing Cockpit:</span> واحد لوحة تحكم (<span
+                      class="term-en">Dashboard</span>) كتخليك تسير وتراقب الخطوات ديال السدان (<span
+                      class="term-en">Closing</span>).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header" id="section-header-u1s1c" onclick="appToggleSection('u1s1c')">
+              <span class="section-num">3</span>
+              <h3>الذكاء الاصطناعي (SAP Business AI)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body" id="section-body-u1s1c">
+              <div class="section-content">
+                <p>الدرس ركز على كيفاش <span class="term-en">AI</span> كيخفف الخدمة على المحاسبين:</p>
+                <ul>
+                  <li><span class="term">SAP Build Process Automation:</span> كيهز <span class="term-en">Journal
+                      Entries</span> (القيود المحاسبية) من <span class="term-en">Email (Outlook)</span> وكيحطهم نيشان فـ
+                    <span class="term-en">SAP Fiori</span> بلا ما المحاسب يبقاش كيكوبي ويصق.</li>
+                  <li><span class="term">GR/IR Reconciliation:</span> هاد الأداة بالذكاء الاصطناعي كتقارن بين السلعة
+                    اللي دخلات (<span class="term-en">Goods Receipt</span>) والفاتورة اللي جات (<span
+                      class="term-en">Invoice Receipt</span>). إلا كان شي فرق، هي كتعطيك اقتراحات كيفاش تحل المشكل.</li>
+                  <li><span class="term">Proposed Reclassification:</span> إلا كان شي قيد محاسبي محطوط فـ <span
+                      class="term-en">G/L Account</span> غلط، السيستيم كيقترح عليك التصحيح أوتوماتيكياً.</li>
+                </ul>
+
+                <div class="info-box tip">
+                  <div class="info-box-title">💡 ملخص سريع</div>
+                  هاد الدرس بغا يعلمك باللي Record to Report ماشي غير تسجيل حسابات، بل هو نظام متكامل كيبدا من "تذكرة
+                  الشراء" حتى لـ "الميزانية السنوية"، و SAP كيعطيك أدوات باش هادشي يدوز أوتوماتيكي، دقيق، وسريع.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://learnsap.enable-now.cloud.sap/pub/mmcp/index.html?show=project!PR_1F4E55B0AA14B6A8:uebung#3"
+          target="_blank" class="external-link-btn">
+          🔗 Create Supplier (تمرين عملي)
+        </a>
+
+        <button class="mark-done-btn" id="done-btn-u1-l1-s1" onclick="appMarkDone('u1-l1-s1')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u1-l1-s1')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u1-l1-s2 ═══════════ -->
+      <div id="lesson-u1-l1-s2" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📊 الوحدة 1 – الدرس 2</div>
+          <h2>تسجيل العمليات المالية والـ Universal Journal</h2>
+          <p>القلب النابض ديال SAP S/4HANA Finance</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header" id="section-header-u1s2a" onclick="appToggleSection('u1s2a')">
+              <span class="section-num">1</span>
+              <h3>شنو هو الـ Universal Journal (ACDOCA)؟</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body" id="section-body-u1s2a">
+              <div class="section-content">
+                <p>فالنسخ القديمة ديال <span class="term-en">SAP</span>، كانت المحاسبة المالية (<span
+                    class="term-en">FI</span>) معزولة على محاسبة التكاليف (<span class="term-en">CO</span>). دابا فـ
+                  <span class="term-en">S/4HANA</span>، كولشي تجمع فبلاصا وحدة كتسمى <span class="term">Universal
+                    Journal</span> (كولشي كيعرفها بسميت الجدول التقني <span class="term-en">ACDOCA</span>).</p>
+                <ul>
+                  <li><span class="term">Single Source of Truth:</span> كاع المعلومات (FI, CO, Asset Accounting,
+                    Inventory) كتسجل فجدول واحد. هادشي كيهنينا من عملية التسوية (<span
+                      class="term-en">Reconciliation</span>) اللي كانت كتاخد وقت طويل.</li>
+                  <li><span class="term">الشمولية:</span> أي سطر (<span class="term-en">Line Item</span>) كيتزاد،
+                    كيتزادوا معاه معلومات الربحية (<span class="term-en">Profitability</span>) ومراكز التكلفة (<span
+                      class="term-en">Cost Centers</span>) في نفس الوقت.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header" id="section-header-u1s2b" onclick="appToggleSection('u1s2b')">
+              <span class="section-num">2</span>
+              <h3>التقارير القطاعية (Segment Reporting)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body" id="section-body-u1s2b">
+              <div class="section-content">
+                <p>الشركات الكبيرة (بحال اللي خدامة بـ <span class="term-en">IFRS</span> أو <span class="term-en">US
+                    GAAP</span>) ملزمة تعطي تقارير على كل قطاع (<span class="term-en">Segment</span>) بوحدو:</p>
+                <ul>
+                  <li><span class="term">الـ Segment:</span> هو جزء من الشركة كيدير مداخيل ومصاريف (مثلاً قطاع السيارات
+                    وقطاع الشاحنات في شركة واحدة).</li>
+                  <li><span class="term">الربط:</span> في SAP، كنربطوا الـ Segment بـ <span class="term-en">Profit
+                      Center</span>. هادشي كيخلينا نخرجوا ميزانية (<span class="term-en">Balance Sheet</span>) وحساب
+                    نتائج لكل قطاع بوحدو بكل سهولة.</li>
+                </ul>
+                <div class="info-box">
+                  <div class="info-box-title">📝 ملاحظة</div>
+                  <p class="ltr-text">Segment : comme un mini société qui génère un revenue et crée des charges. C'est
+                    pour cela en SAP le segment doit être toujours lié à un Profit Center ou plusieurs et un Cost Center
+                    ou plusieurs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header" id="section-header-u1s2c" onclick="appToggleSection('u1s2c')">
+              <span class="section-num">3</span>
+              <h3>كيفاش كنسجلو العمليات؟ (Fiori App)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body" id="section-body-u1s2c">
+              <div class="section-content">
+                <p>باش ندخلو شي قيد محاسبي (<span class="term-en">Journal Entry</span>)، كنخدمو بـ <span
+                    class="term-en">App</span> سميتها <span class="term">Post General Journal Entries</span>. الواجهة
+                  ديالها مقسمة لـ 4 ديال البلايص:</p>
+                <ul>
+                  <li><span class="term">Header Data:</span> معلومات عامة (تاريخ العملية، نوع المستند، العملة).</li>
+                  <li><span class="term">Line Items:</span> هنا كتدخل الحسابات (Debit/Credit) والمبالغ.</li>
+                  <li><span class="term">Tax Items:</span> إلا كاينين ضرائب (TVA مثلاً)، السيستيم كيحسبهم أوتوماتيكياً.
+                  </li>
+                  <li><span class="term">Templates:</span> هادي ميزة زوينة، كتقدر توجد "نماذج" واجدة للعمليات اللي
+                    كيتعاودوا ديما.</li>
+                </ul>
+                <h4>مراحل تسجيل القيد</h4>
+                <ul>
+                  <li><span class="term">Simulation (المحاكاة):</span> قبل ما تفاليدي، كتقدر تدير "Simulate" باش تشوف
+                    كيفاش السيستيم غادي يحط الأسطر وتأكد بلي الحساب متوازن.</li>
+                  <li><span class="term">Posting (التسجيل النهائي):</span> فاش كتأكد، كدير Post، والعملية كتمشي ديريكت
+                    للـ Universal Journal وكتولي "الحقيقة الوحيدة" فكاع التقارير.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u1-l1-s2" onclick="appMarkDone('u1-l1-s2')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u1-l1-s2')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u1-l1-s2')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u1-l2-s2 ═══════════ -->
+      <div id="lesson-u1-l2-s2" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📊 الوحدة 1 – الدرس 3</div>
+          <h2>المحاسبة المتوازية (Parallel Accounting)</h2>
+          <p>كيفاش تخرج ميزانية بقوانين مختلفة في نفس الوقت</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u1l2s2a" onclick="appToggleSection('u1l2s2a')">
+              <span class="section-num">1</span>
+              <h3>شنو هو الـ Ledger (الدفتر)؟</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u1l2s2a">
+              <div class="section-content">
+                <p>الـ <span class="term">Ledger</span> هو بحال واحد "الرف" فالدولاب ديال البيانات. كل Ledger كيسجل
+                  العمليات المالية بواحد الطريقة محددة.</p>
+                <ul>
+                  <li><span class="term">Leading Ledger (0L):</span> هو الدفتر الأساسي. السيستيم كيعطيه الكود 0L
+                    أوتوماتيكياً. هاد الدفتر هو اللي كيكون مربوط مع كاع الموديلات الأخرى وكيمثل غالباً المحاسبة المحلية
+                    ديال البلاد.</li>
+                  <li><span class="term">Non-Leading Ledger (Parallel Ledger):</span> هو دفتر كيمشي بالتوازي مع الأول.
+                    كنستعملوه باش نطبقوا فيه معايير مختلفة (مثلاً <span class="term-en">2L</span> لـ <span
+                      class="term-en">IFRS</span>).</li>
+                </ul>
+                <h4>علاش كنحتاجو المحاسبة المتوازية؟</h4>
+                <p>تخيل شركة ميريكانية عندها فرع فالمغرب:</p>
+                <ul>
+                  <li><span class="term">القانون المغربي:</span> كيقوليك الاستهلاك (Amortissement) ديال السيارة كيكون
+                    على 5 سنين.</li>
+                  <li><span class="term">قانون المجموعة (IFRS):</span> كيقوليك لا، هاد السيارة غ نستهلكوها على 3 سنين
+                    حيت كنخدمو بها بزاف.</li>
+                </ul>
+                <p>فـ SAP، كدوز العملية مرة وحدة، والسيستيم كيقيد فـ <span class="term-en">0L</span> الاستهلاك ديال 5
+                  سنين، وفـ <span class="term-en">2L</span> كيقيد الاستهلاك ديال 3 سنين.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header" id="section-header-u1l2s2b" onclick="appToggleSection('u1l2s2b')">
+              <span class="section-num">2</span>
+              <h3>الفرق بين Ledger و Ledger Group</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body" id="section-body-u1l2s2b">
+              <div class="section-content">
+                <ul>
+                  <li><span class="term">Ledger:</span> هو الدفتر بوحدو (<span class="term-en">0L</span> أو <span
+                      class="term-en">2L</span>).</li>
+                  <li><span class="term">Ledger Group:</span> هي مجموعة ديال الدفاتر. كنحتاجوها فاش كنبيو ندوزو شي "قيد
+                    محاسبي" خاص غير بمعيار واحد. مثلاً، "Adjustment" بغيتو يبان غير في IFRS، كنسجلو مباشرة فـ Ledger
+                    Group ديال IFRS.</li>
+                </ul>
+                <div class="info-box tip">
+                  <div class="info-box-title">💡 معلومة تقنية</div>
+                  كاع هاد الـ Ledgers كيصبوا فجدول واحد اللي هضرنا عليه قبل هو <span class="term-en">ACDOCA</span>. يعني
+                  مابقاش عندنا تكرار البيانات، غير هو كل سطر كيكون معروف واش تابع لـ 0L أو 2L أو ليهم بجوج.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u1-l2-s2" onclick="appMarkDone('u1-l2-s2')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u1-l2-s2')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u1-l2-s2')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u1-l2-s3 ═══════════ -->
+      <div id="lesson-u1-l2-s3" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📊 الوحدة 1 – الدرس 4</div>
+          <h2>التقارير القطاعية (Segment Reporting)</h2>
+          <p>كيفاش نشوفو الأرباح والخسائر حسب نوع النشاط</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u1l2s3a" onclick="appToggleSection('u1l2s3a')">
+              <span class="section-num">1</span>
+              <h3>شنو هو الـ Segment (القطاع)؟</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u1l2s3a">
+              <div class="section-content">
+                <p>تخيل شركة كبيرة بحال "Bike Company" اللي عندها أنشطة مختلفة:</p>
+                <ul>
+                  <li>كتبيع البيكالات (<span class="term-en">Bikes</span>).</li>
+                  <li>كتبيع قطع الغيار (<span class="term-en">Spare Parts</span>).</li>
+                  <li>وكدير خدمات الإصلاح (<span class="term-en">Services</span>).</li>
+                </ul>
+                <p>الـ <span class="term">Segment</span> هو هاد النوع ديال النشاط. علاش كنفصلوهم؟ حيت المدير كيبغي يعرف
+                  واش قطاع "الخدمات" كيربح كثر من قطاع "البيع"، باش يعرف فين يستثمر فلوسو.</p>
+
+                <h4>الفرق بين Company Code والـ Segment</h4>
+                <ul>
+                  <li><span class="term">Company Code:</span> كيمثل الوحدة "القانونية" (مثلاً فرع ألمانيا بوحدو).</li>
+                  <li><span class="term">Segment:</span> كيمثل الوحدة "التجارية" عبر الحدود. يعني نقدر نجمع مبيعات
+                    البيكالات فميريكان + مبيعات البيكالات فألمانيا ونخرج بيهم ميزانية وحدة.</li>
+                </ul>
+
+                <h4>علاش ضروري Segment Reporting؟</h4>
+                <ul>
+                  <li><span class="term">القوانين الدولية:</span> <span class="term-en">IFRS 8</span> و <span
+                      class="term-en">US-GAAP</span> كتفرض على الشركات الكبيرة باش تعطي تفاصيل على أداء كل قطاع.</li>
+                  <li><span class="term">رؤية أعمق:</span> كيعاون الإدارة تعرف شكون النشاط اللي "خدام" وشكون اللي
+                    "واقف".</li>
+                  <li><span class="term">الشفافية:</span> المستثمرين كيبغيو يشوفو فين كيمشيو فلوسهم بالضبط.</li>
+                </ul>
+
+                <h4>كيفاش SAP كيعرف العملية تابعة لـ Segment؟</h4>
+                <p>فـ SAP، الـ Segment كيكون غالباً مربوط بـ <span class="term-en">Profit Center</span>. فاش كتدوز
+                  فاتورة بيع بيكالة، السيستيم كيعرف باللي هاد المبيعات تابعة لـ Profit Center ديال "Bikes"، وبالتالي
+                  تابعة للـ Segment أوتوماتيكياً عبر الـ <span class="term-en">Universal Journal (ACDOCA)</span>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u1-l2-s3" onclick="appMarkDone('u1-l2-s3')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u1-l2-s3')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u1-l2-s3')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u1-l2-s4 ═══════════ -->
+      <div id="lesson-u1-l2-s4" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📊 الوحدة 1 – الدرس 5</div>
+          <h2>Profit Centers ومراكز الربح</h2>
+          <p>كيفاش كنقسمو الشركة داخلياً باش نعرفو فين كاين الربح</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u1l2s4a" onclick="appToggleSection('u1l2s4a')">
+              <span class="section-num">1</span>
+              <h3>شنو هو الـ Profit Center؟</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u1l2s4a">
+              <div class="section-content">
+                <p>الـ <span class="term">Profit Center</span> هو وحدة تنظيمية داخل SAP كتمثل "شركة وسط شركة". الهدف هو
+                  قياس الأداء المالي لواحد الجزء معين من الشركة.</p>
+                <p>المدير اللي كيكون مكلف بـ Profit Center كيكون مسؤول على المداخيل (<span
+                    class="term-en">Revenues</span>) والمصاريف (<span class="term-en">Expenses</span>) ديالو. يعني خاصو
+                  يحقق الربح.</p>
+
+                <h4>كيفاش كنظموا الـ Profit Centers؟</h4>
+                <ul>
+                  <li><span class="term">تقسيم جغرافي:</span> مثلاً Profit Center شمال المغرب، Profit Center جنوب
+                    المغرب.</li>
+                  <li><span class="term">تقسيم على حسب المنتوج:</span> هادشي اللي دارت Bike Company (مركز خاص بـ المنتج
+                    A ومركز خاص بـ المنتج B).</li>
+                  <li><span class="term">تقسيم وظيفي:</span> مثلاً مركز خاص بالإنتاج، مركز خاص بالمبيعات.</li>
+                </ul>
+
+                <h4>الـ Profit Center Group (المجموعات)</h4>
+                <p>SAP كيخلينا نجمعوهم فـ <span class="term-en">Hierarchies</span> (تسلسل هرمي): كدير مجموعة كبيرة
+                  (مثلاً: قطاع الدراجات). وسط منها مجموعات صغار (دراجات سباق، دراجات جبلية).</p>
+
+                <h4>ميزة قوية في SAP S/4HANA</h4>
+                <p>فـ SAP القديم، الـ Profit Center كان كيعطينا غير الربح والخسارة (<span class="term-en">P&L</span>).
+                  دابا في Universal Journal، كتقدر تخرج حتى <span class="term-en">Balance Sheet</span> (الميزانية) على
+                  مستوى الـ Profit Center. يعني تقدر تعرف حتى المخزون والكريديات اللي كاينين فداك المركز بالضبط.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u1-l2-s4" onclick="appMarkDone('u1-l2-s4')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u1-l2-s4')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u1-l2-s4')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u1-l2-s5 ═══════════ -->
+      <div id="lesson-u1-l2-s5" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📊 الوحدة 1 – الدرس 6</div>
+          <h2>Cost of Sales Accounting</h2>
+          <p>كيفاش كنخرجو حساب النتائج بطريقة احترافية</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u1l2s5a" onclick="appToggleSection('u1l2s5a')">
+              <span class="section-num">1</span>
+              <h3>جوج طرق باش نخرجو الـ P&L</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u1l2s5a">
+              <div class="section-content">
+                <ul>
+                  <li><span class="term">Period Accounting (المحاسبة حسب الفترة):</span> كنجمعوا كاع المصاريف اللي تقيدت
+                    فواحد الشهر ونقصوهم من المداخيل. المشكل هنا هو أنها ما كتعطيكش "الغرض" من داك الصرف.</li>
+                  <li><span class="term">Cost of Sales Accounting (المحاسبة حسب تكلفة المبيعات):</span> هنا كنقارنو
+                    المداخيل مع "شحال تقامت علينا" ديك السلعة اللي تبعات بالضبط. المصاريف هنا كتنظم على حسب الوظيفة (واش
+                    خلصناها في الإنتاج، ولا في الإشهار، ولا في الإدارة).</li>
+                </ul>
+
+                <h4>شنو هو الـ Functional Area؟</h4>
+                <p>هذا هو المفتاح باش نخدمو بـ Cost of Sales. الـ <span class="term">Functional Area</span> هو واحد
+                  "السمتة" (<span class="term-en">Tag</span>) كنلصقوها في العملية المالية باش نعرفو فين مشات:</p>
+                <ul>
+                  <li><span class="term-en">Production:</span> مصاريف المعمل.</li>
+                  <li><span class="term-en">Sales & Distribution:</span> مصاريف البيع والتوصيل.</li>
+                  <li><span class="term-en">Administration:</span> مصاريف الإدارة.</li>
+                  <li><span class="term-en">R&D:</span> مصاريف البحث والتطوير.</li>
+                </ul>
+
+                <h4>كيفاش SAP كيعرف الـ Functional Area؟</h4>
+                <p>السيستيم ذكي، كيقدر يجبد هاد المعلومة من بزاف ديال البلايص أوتوماتيكياً:</p>
+                <ul>
+                  <li>من <span class="term-en">Master Record</span> ديال الـ <span class="term-en">G/L Account</span>.
+                  </li>
+                  <li>من الـ <span class="term-en">Cost Center</span>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u1-l2-s5" onclick="appMarkDone('u1-l2-s5')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u1-l2-s5')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u1-l2-s5')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u1-l3-s1 ═══════════ -->
+      <div id="lesson-u1-l3-s1" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📊 الوحدة 1 – الدرس 7</div>
+          <h2>المحاسبة العامة والفرعية (GL & Sub-ledgers)</h2>
+          <p>كيفاش SAP كايجمع كاع الحركات المالية فبلاصا وحدة</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u1l3s1a" onclick="appToggleSection('u1l3s1a')">
+              <span class="section-num">1</span>
+              <h3>المحاسبة العامة والفرعية</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u1l3s1a">
+              <div class="section-content">
+                <h4>المحاسبة العامة <span class="term-en">General Ledger (FI-GL)</span></h4>
+                <p>هي داك الكتاب الكبير اللي الفوق. هو "المركز" اللي كيتجمعوا فيه كاع المعلومات باش نخرجوا:</p>
+                <ul>
+                  <li><span class="term-en">Balance Sheet Accounts:</span> حسابات الميزانية (الأصول والخصوم).</li>
+                  <li><span class="term-en">P&L Accounts:</span> حسابات الأرباح والخسائر (المداخيل والمصاريف).</li>
+                </ul>
+
+                <h4>المحاسبة الفرعية <span class="term-en">Sub-ledgers</span></h4>
+                <ul>
+                  <li><span class="term">Accounts Payable (FI-AP):</span> خاص بالموردين (Suppliers). كاع عمليات الشراء
+                    كيدوزوا هنا.</li>
+                  <li><span class="term">Accounts Receivable (FI-AR):</span> خاص بالكليان (Customers). كاع عمليات البيع
+                    كيدوزوا هنا.</li>
+                  <li><span class="term">Asset Accounting (FI-AA):</span> خاص بالأصول الثابتة بحال الماكينات، السيارات،
+                    والعقارات.</li>
+                </ul>
+
+                <h4>كيفاش كيوصل داكشي لـ General Ledger؟ (الربط الآلي)</h4>
+                <p>فاش كتدوز فاتورة شراء لمورد، السيستيم كيقيدها فالحساب ديالو بوحدو فـ Accounts Payable. أوتوماتيكياً،
+                  السيستيم كيمشي يحرك واحد الحساب فـ General Ledger كيتسمى <span class="term">Reconciliation
+                    Account</span> (حساب التسوية).</p>
+
+                <div class="info-box tip">
+                  <div class="info-box-title">💡 خلاصة</div>
+                  الـ General Ledger هو "الجامع" ديال كاع هاد الحركات. SAP ماشي غير مربعات معزولة، بل هو نظام كيتنفس مع
+                  بعضياتو. أي حركة فالمخزن، ولا فالمبيعات، ولا فالمشتريات، كترجم ديريكت لأرقام محاسبية.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u1-l3-s1" onclick="appMarkDone('u1-l3-s1')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u1-l3-s1')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u1-l3-s1')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u1-l3-s2 ═══════════ -->
+      <div id="lesson-u1-l3-s2" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📊 الوحدة 1 – الدرس 8</div>
+          <h2>الهيكل التنظيمي للمؤسسة</h2>
+          <p>كيفاش كنرسمو الشركة وسط السيستيم</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u1l3s2a" onclick="appToggleSection('u1l3s2a')">
+              <span class="section-num">1</span>
+              <h3>الوحدات التنظيمية الرئيسية</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u1l3s2a">
+              <div class="section-content">
+                <p>باش نخدمو بـ SAP، خاصنا "نرسمو" الشركة وسط السيستيم باستعمال وحدات تنظيمية (<span
+                    class="term-en">Organizational Units</span>):</p>
+                <ul>
+                  <li><span class="term">Controlling Area (CO Area):</span> هادي هي الكبيرة في المحاسبة الإدارية. هي
+                    اللي كنجمعو فيها التكاليف ونراقبوها. تقدر تكون جامعة شركة وحدة أو بزاف.</li>
+                  <li><span class="term">Company Code (FI):</span> هي الوحدة القانونية اللي كتخرج الميزانية (Bilan). هي
+                    اللي كتمثل الضرائب والقوانين ديال البلاد.</li>
+                  <li><span class="term">Plant (المصنع/المركز):</span> وحدة خاصة باللوجستيك. يقدر يكون معمل، ديبو، أو
+                    حتى مكتب.</li>
+                  <li><span class="term">Purchasing Organization:</span> هي مصلحة المشتريات اللي كتفاوض مع الموردين.
+                  </li>
+                  <li><span class="term">Sales Organization:</span> مصلحة المبيعات المسؤولة على توزيع وبيع السلع
+                    والخدمات.</li>
+                </ul>
+
+                <div class="info-box">
+                  <div class="info-box-title">📝 مثال عملي</div>
+                  إلا كانت شركة "Bike Company" عندها معمل فكازا: المعمل كيتسمى Plant، الشركة قانونياً فالمغرب هي الـ
+                  Company Code، الإدارة اللي مقابلة المصاريف هي الـ Controlling Area، والمصلحة اللي كتشري الحديد
+                  للبيكالات هي الـ Purchasing Org.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u1-l3-s2" onclick="appMarkDone('u1-l3-s2')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u1-l3-s2')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u1-l3-s2')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u2-l1-s1 ═══════════ -->
+      <div id="lesson-u2-l1-s1" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">💳 الوحدة 2 – الدرس 1</div>
+          <h2>إدارة الموردين (Payables Management)</h2>
+          <p>كيفاش كنسيرو "الديون" ديال الشركة والتعاملات مع الموردين</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u2l1s1a" onclick="appToggleSection('u2l1s1a')">
+              <span class="section-num">1</span>
+              <h3>مهام محاسب الموردين</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u2l1s1a">
+              <div class="section-content">
+                <p>المهام الرئيسية في قسم الـ <span class="term-en">AP</span>:</p>
+                <ul>
+                  <li><span class="term">Supplier Invoice Entry:</span> تسجيل الفاتورة اللي جات من المورد في السيستيم.
+                  </li>
+                  <li><span class="term">Posting Correction:</span> تصحيح أي غلط وقع أثناء التسجيل.</li>
+                  <li><span class="term">Payment Run:</span> العملية اللي كتخرج الفلوس للموردين (إما فيرمون بانكير أو
+                    شيك) بناءً على تاريخ الاستحقاق.</li>
+                  <li><span class="term">Down Payments:</span> تسيير التسبيقات اللي كنعطيو للمورد قبل ما تجينا السلعة.
+                  </li>
+                </ul>
+
+                <h4>مفهوم الـ Business Partner (BP)</h4>
+                <p>في <span class="term-en">S/4HANA</span>، كاين مفهوم موحد سميته <span class="term">Business
+                    Partner</span>. أي شركة كنتعاملو معاها هي BP، ومن بعد كنحددو الدور ديالها (Role): واش هي مورد
+                  (Supplier)؟ واش هي زبون (Customer)؟ ولا بجوج؟</p>
+                <p>باش تصاوب BP جديد، خاصك:</p>
+                <ul>
+                  <li><span class="term">Category:</span> واش شخص (Person)، شركة (Organization)، ولا مجموعة (Group).
+                  </li>
+                  <li><span class="term">Role:</span> واش غيكون مورد مالي أو مورد مشتريات.</li>
+                  <li><span class="term">Grouping:</span> كتحدد الرقم (ID) اللي غياخد هاد المورد.</li>
+                </ul>
+
+                <h4>دورة حياة الفاتورة</h4>
+                <ul>
+                  <li><span class="term">Receipt:</span> كتوصلنا الفاتورة.</li>
+                  <li><span class="term">Entry/Posting:</span> كنقيدوها في السيستيم.</li>
+                  <li><span class="term">Selection:</span> السيستيم كيختارها حيت وصل وقت خلاصها.</li>
+                  <li><span class="term">Payment & Clearing:</span> ملي كنخلصوها، السيستيم كيدير Clearing.</li>
+                </ul>
+
+                <h4>مكونات وثيقة المحاسبة</h4>
+                <ul>
+                  <li><span class="term">Header:</span> المعلومات العامة (تاريخ الفاتورة، العملة، الشركة).</li>
+                  <li><span class="term">Line Items:</span> الحسابات والمبالغ (شحال للمورد، شحال ديال الـ TVA).</li>
+                  <li><span class="term">Tax Area:</span> تفاصيل الضرائب.</li>
+                </ul>
+
+                <div class="info-box tip">
+                  <div class="info-box-title">🤖 الذكاء الاصطناعي (SAP Business AI)</div>
+                  دابا SAP S/4HANA ولا كيخدم بـ Business AI باش يقرأ الفواتير أوتوماتيكياً (OCR) ويقترح عليك التسجيل بلا
+                  ما تبقى تكتبي كلشي بيديك.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://learnsap.enable-now.cloud.sap/pub/mmcp/index.html?show=project!PR_1F4E55B0AA14B6A8:uebung#3"
+          target="_blank" class="external-link-btn">
+          🔗 Create Supplier (تمرين عملي 1)
+        </a>
+        <a href="https://learnsap.enable-now.cloud.sap/pub/mmcp/index.html?show=project!PR_1A49B836C404BB9D:uebung#3"
+          target="_blank" class="external-link-btn">
+          🔗 Create Supplier Invoice
+        </a>
+        <a href="https://learnsap.enable-now.cloud.sap/pub/mmcp/index.html?show=project!PR_E277667B059B8D83:uebung#3"
+          target="_blank" class="external-link-btn">
+          🔗 Analyze Open Items in Payables Management
+        </a>
+
+
+        <button class="mark-done-btn" id="done-btn-u2-l1-s1" onclick="appMarkDone('u2-l1-s1')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u2-l1-s1')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u2-l1-s1')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u2-l1-s2 ═══════════ -->
+      <div id="lesson-u2-l1-s2" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">💳 الوحدة 2 – الدرس 2</div>
+          <h2>حساب التسوية والفاتورة والـ KPIs</h2>
+          <p>الربط التقني بين حسابات الموردين والمحاسبة العامة</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u2l1s2a" onclick="appToggleSection('u2l1s2a')">
+              <span class="section-num">1</span>
+              <h3>حساب التسوية (Reconciliation Account)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u2l1s2a">
+              <div class="section-content">
+                <p>في SAP:</p>
+                <ul>
+                  <li><span class="term">حساب المورد (Sub-ledger):</span> كل مورد عندو رقم خاص.</li>
+                  <li><span class="term">حساب التسوية (Reconciliation Account):</span> هو حساب في الـ <span
+                      class="term-en">General Ledger</span>.</li>
+                </ul>
+                <p>فاش كتقيد فاتورة للمورد، SAP كيقيدها أوتوماتيكياً في حساب التسوية. <span class="term">ممنوع</span>
+                  تقيد شي حاجة يدويًا مباشرة في حساب التسوية؛ كولشي خاصو يدوز عبر حساب المورد.</p>
+
+                <h4>الفرق بين فاتورة بـ PO وبلا PO</h4>
+                <table class="content-table">
+                  <tr>
+                    <th>المكان</th>
+                    <th>فاتورة مع PO (سلعة)</th>
+                    <th>فاتورة بلا PO (مصاريف)</th>
+                  </tr>
+                  <tr>
+                    <td>Balance Sheet</td>
+                    <td>المبلغ TTC في حساب الموردين</td>
+                    <td>المبلغ TTC في حساب الموردين</td>
+                  </tr>
+                  <tr>
+                    <td>P&L</td>
+                    <td>ما كيبان والو (السلعة بقات في المخزن)</td>
+                    <td>المبلغ الصافي كـ Expense</td>
+                  </tr>
+                  <tr>
+                    <td>Taxes</td>
+                    <td>TVA ديريكت لحساب TVA Recuperable</td>
+                    <td>TVA ديريكت لحساب TVA Recuperable</td>
+                  </tr>
+                </table>
+
+                <h4>مراقبة الأداء (KPIs)</h4>
+                <ul>
+                  <li><span class="term">Accounts Payable Overview:</span> لوحة تحكم كتجمع كاع المؤشرات.</li>
+                  <li><span class="term">Days Payable Outstanding (DPO):</span> كيحسب شحال من نهار كتاخد الشركة باش تخلص
+                    الموردين.</li>
+                  <li><span class="term">Aging Analysis:</span> كيوريك الفواتير اللي فات وقتها (Overdue).</li>
+                </ul>
+
+                <div class="info-box">
+                  <div class="info-box-title">📝 ملاحظة مهمة</div>
+                  فاش كتشوف حساب <span class="term-en">GR/IR</span> عامر، كتعرف بلي كاين مشكل: إما السلعة دخلات
+                  والفاتورة مازال، أو الفاتورة تخلصات والسلعة مازال ما وصلات.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://learnsap.enable-now.cloud.sap/pub/mmcp/index.html?show=project!PR_F3F6C3C8E32741AB:uebung#3"
+          target="_blank" class="external-link-btn">
+          🔗 تمرين عملي 4
+        </a>
+        <a href="https://learnsap.enable-now.cloud.sap/pub/mmcp/index.html?show=project!PR_A0E10418A557AB92:uebung#3"
+          target="_blank" class="external-link-btn">
+          🔗 تمرين عملي 5
+        </a>
+
+        <button class="mark-done-btn" id="done-btn-u2-l1-s2" onclick="appMarkDone('u2-l1-s2')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u2-l1-s2')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u2-l1-s2')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u6-l1-s1 ═══════════ -->
+      <div id="lesson-u6-l1-s1" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">🏢 الوحدة 6 – الدرس 1</div>
+          <h2>دورة حياة الأصل والهيكل التنظيمي</h2>
+          <p>الأساسيات ديال Asset Accounting وكيفاش كنتعاملوا مع الأصول الثابتة</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s1a" onclick="appToggleSection('u6l1s1a')">
+              <span class="section-num">1</span>
+              <h3>دورة حياة الأصل الثابت (Asset Life Cycle)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s1a">
+              <div class="section-content">
+                <p>أي أصل (فحال الماكينة، طوموبيل، أو حفارة) كيدوز من 3 ديال المراحل أساسية:</p>
+                <ul>
+                  <li><span class="term">Acquisition (الإقتناء):</span> هي فاش كنشريو الأصل وندخلوه للسيستيم
+                    (Capitalization).</li>
+                  <li><span class="term">Usage (الاستعمال):</span> خلال هاد المدة، الأصل كيقدم وكتنقص قيمته، هادشي اللي
+                    كنسميوه Depreciation (الاهتلاك/L'amortissement). السيستيم كيحسب هاد القيمة ويقيدها فالمصاريف.</li>
+                  <li><span class="term">Retirement (الخروج):</span> فاش كيسالي الأصل أولا كنبيعوه أولا كنلوحوه
+                    (Scrapping).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s1b" onclick="appToggleSection('u6l1s1b')">
+              <span class="section-num">2</span>
+              <h3>الهيكل التنظيمي (Organizational Structure)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s1b">
+              <div class="section-content">
+                <p>الأصل ديما كيكون تابع لـ <span class="term-en">Company Code</span>. أي عملية (شراء، بيع، اهتلاك)
+                  كتقيد مباشرة في هاد الـ Company Code وفي دفتر الأستاذ العام (General Ledger).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s1c" onclick="appToggleSection('u6l1s1c')">
+              <span class="section-num">3</span>
+              <h3>فئة الأصول (Asset Class) وأهميتها</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s1c">
+              <div class="section-content">
+                <p>هادي هي أهم حاجة في الإعدادات. الـ <span class="term">Asset Class</span> هي اللي كتحكم في كاع الأصول
+                  اللي من نفس النوع (مثلاً: كاع الماكينات كديروهم في Asset Class وحدة).</p>
+                <h4>شنو الدور ديالها؟</h4>
+                <ul>
+                  <li><span class="term">Default Values:</span> كتعطينا قيم افتراضية (مثلاً شحال من عام كتعيش الماكينة،
+                    وطريقة حساب Depreciation).</li>
+                  <li><span class="term">Account Determination:</span> هي "الصلة" بين الأصل و G/L Accounts. هي اللي
+                    كتقول للسيستيم: "إلا شرينا هاد الماكينة، قيد الثمن في كونط رقم X".</li>
+                  <li><span class="term">Reporting:</span> كتسمح لينا نخرجو تقارير منظمة.</li>
+                  <li><span class="term">Number Range:</span> كل كلاص عندها سلسلة أرقام. فاش كتدير Save، السيستيم كيعطي
+                    للأصل أول رقم خاوي أوتوماتيكياً.</li>
+                </ul>
+                <div class="info-box warning">
+                  <div class="info-box-title">⚠️ القفل (No Change After Saving)</div>
+                  غير كتدير Save للأصل، مابقاش عندك الحق تبدل الـ Asset Class ديالو. إلا غلطتي، الحل الوحيد هو تكريه من
+                  جديد وتدير Transfer للقيم.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u6-l1-s1" onclick="appMarkDone('u6-l1-s1')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u6-l1-s1')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u6-l1-s1')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u6-l1-s2 ═══════════ -->
+      <div id="lesson-u6-l1-s2" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">🏢 الوحدة 6 – الدرس 2</div>
+          <h2>البيانات الأساسية للأصل (Asset Master Data)</h2>
+          <p>"لاكارت ناسيونال" ديال الأصل في سيستيم SAP</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s2a" onclick="appToggleSection('u6l1s2a')">
+              <span class="section-num">1</span>
+              <h3>مكونات الـ Asset Master Record</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s2a">
+              <div class="section-content">
+                <p>قبل ما تشري الأصل، خاص ضروري تكريه في السيستيم وتعطيه رقم. هاد البطاقة مقسومة لجوج أجزاء أساسية:</p>
+
+                <h4>1. معلومات عامة (General Master Data)</h4>
+                <p>هادي معلومات وصفية وإدارية، كنشوفوها غالباً في الـ General Tab:</p>
+                <ul>
+                  <li><span class="term">Description:</span> السمية ديال الأصل (مثلاً: Excavator Model X200).</li>
+                  <li><span class="term">Cost Center:</span> فين خدام هاد الأصل؟ (مثلاً قسم الأشغال الكبرى).</li>
+                  <li><span class="term">Activation Date:</span> النهار اللي دخل فيه الأصل للخدمة.</li>
+                  <li><span class="term">Vendor:</span> شكون الفورنيسور اللي شرينا من عندو الماكينة.</li>
+                </ul>
+
+                <h4>2. معلومات القيم والإهلاك (Asset Value Data)</h4>
+                <p>هادي معلومات حسابية وتقنية، كنشوفوها في الـ Depreciation Areas Tab:</p>
+                <ul>
+                  <li><span class="term">Depreciation Keys:</span> هي "القاعدة" اللي غيتحسب بها الاهلاك (مثلاً Linear).
+                  </li>
+                  <li><span class="term">Useful Life:</span> شحال من عام غتعيش هاد الماكينة.</li>
+                  <li><span class="term">Scrap Value:</span> القيمة اللي غتبقى تسوى الماكينة كخردة فاش تسالي مدة
+                    الصلاحية.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s2b" onclick="appToggleSection('u6l1s2b')">
+              <span class="section-num">2</span>
+              <h3>فين كانديرو هادشي في SAP؟ (Fiori Apps)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s2b">
+              <div class="section-content">
+                <ul>
+                  <li><span class="term-en">Manage Fixed Assets:</span> هي الـ App الرئيسية فين كتقدر تكريه (Create)،
+                    تعدل (Edit)، أو تشوف المعلومات ديال الأصل.</li>
+                  <li><span class="term-en">Create Asset (Legacy):</span> الطريقة القديمة (فحال AS01).</li>
+                  <li><span class="term-en">Display Asset Master Record:</span> باش غير تقلب على المعلومات بلا ما
+                    تبدلها.</li>
+                </ul>
+
+                <h4>المراحل (Process Flow):</h4>
+                <ol>
+                  <li>كتفتح App "Manage Fixed Assets".</li>
+                  <li>كتكليكي على Create وتختار الـ Asset Class.</li>
+                  <li>كتعمر الـ General Data (السمية، الكوست سنتر).</li>
+                  <li>كتمشي لـ Depreciation وتعمر شحال غتعيش الماكينة وطريقة الحساب.</li>
+                  <li>مورا ما كدير Save وكيعطيك السيستيم رقم، عاد كتقدر تقيد عملية الشراء (Acquisition).</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u6-l1-s2" onclick="appMarkDone('u6-l1-s2')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u6-l1-s2')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u6-l1-s2')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u6-l1-s3 ═══════════ -->
+      <div id="lesson-u6-l1-s3" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">🏢 الوحدة 6 – الدرس 3</div>
+          <h2>حساب الإهلاك (Depreciation)</h2>
+          <p>كيفاش SAP كيحسب شحال غينقص من قيمة الأصل كل شهر</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s3a" onclick="appToggleSection('u6l1s3a')">
+              <span class="section-num">1</span>
+              <h3>العناصر الأساسية وطريقة الحساب</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s3a">
+              <div class="section-content">
+                <p>باش السيستيم يحسب الإهلاك، كيحتاج 4 د الحوايج:</p>
+                <ul>
+                  <li><span class="term">Acquisition Value:</span> ثمن الشراء (مثلاً 100,000 درهم).</li>
+                  <li><span class="term">Useful Life:</span> شحال غيعيش (مثلاً 5 سنين).</li>
+                  <li><span class="term">Depreciation Key:</span> الطريقة (مثلاً LINR - خطية).</li>
+                  <li><span class="term">Depreciation Start Date:</span> نهار كيبدا الحساب.</li>
+                </ul>
+
+                <h4>المثال التطبيقي:</h4>
+                <p>شريتي Excavator بـ 100,000 درهم، وغتعيش 5 سنين:</p>
+                <p>الحساب السنوي: 100,000 ÷ 5 = 20,000 درهم/للعام.</p>
+                <p>الحساب الشهري (اللي كيديرو SAP): 20,000 ÷ 12 = 1,666.67 درهم/للشهر.</p>
+
+                <div class="info-box">
+                  <div class="info-box-title">📝 طريقة "السيستيم" في SAP</div>
+                  السيستيم كيحسب القيم مسبقاً (Planned Depreciation) ولكن مكيقيدهمش في الكونطابيليتي حتى كدير عملية
+                  Posting Run في آخر الشهر.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s3b" onclick="appToggleSection('u6l1s3b')">
+              <span class="section-num">2</span>
+              <h3>تطبيق Schedule Asset Accounting Jobs</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s3b">
+              <div class="section-content">
+                <p>هادي هي الأبليكاسيون "الموطور" اللي كتحسب وتقيد الإهلاكات لكلشي الأصول. المراحل:</p>
+                <ol>
+                  <li>كتعمر الـ Job (مثلاً: Depreciation Posting Run).</li>
+                  <li>كتحدد المعايير (Company Code, Fiscal Year, Posting Period).</li>
+                  <li><span class="term">Test Run:</span> ديما دير "Test Run" في الأول باش السيستيم يعطيك "تقرير تجريبي"
+                    تشوف واش كاين شي غلط.</li>
+                  <li>إلى كان Test Run مزيان، كتعطّل الخانة ديال Test Run وكدير Schedule باش يتقيد فـ Accounting
+                    Journal.</li>
+                </ol>
+
+                <p>باش تأكد أن الحساب داز مزيان، كتمشي لـ App <b>Asset Values</b> وغتلقى أن الشهر تبدلات الحالة ديالو من
+                  Planned لـ Posted.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u6-l1-s3" onclick="appMarkDone('u6-l1-s3')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u6-l1-s3')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u6-l1-s3')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u6-l1-s4 ═══════════ -->
+      <div id="lesson-u6-l1-s4" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">🏢 الوحدة 6 – الدرس 4</div>
+          <h2>الارتباط بالمحاسبة العامة (G/L)</h2>
+          <p>الارتباط المباشر بين الأصول والـ Balance Sheet عبر Universal Journal</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s4a" onclick="appToggleSection('u6l1s4a')">
+              <span class="section-num">1</span>
+              <h3>العلاقة بين FI-AA و G/L</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s4a">
+              <div class="section-content">
+                <p>في SAP S/4HANA بفضل الـ <span class="term-en">Universal Journal</span>، أي عملية شراء أصل
+                  (Acquisition) كتقيد في نفس الوقت في الـ Sub-ledger (بطاقة الأصل) وفي الـ General Ledger (الحسابات
+                  العامة للشركة).</p>
+
+                <h4>تاريخ التفعيل (Capitalization Date)</h4>
+                <p>هو النهار اللي السيستيم كيعتبر فيه أن الماكينة ولات ملك للشركة وغيبدأ يحسب ليها Depreciation. إما
+                  كتدخلو بيديك، أو السيستيم كيقترحوا (كياخد التاريخ الأقدم ما بين Posting Date و Document Date).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s4b" onclick="appToggleSection('u6l1s4b')">
+              <span class="section-num">2</span>
+              <h3>عملية الشراء وحسابات المصالحة</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s4b">
+              <div class="section-content">
+                <h4>عملية الشراء المتكاملة (Integrated Asset Acquisition)</h4>
+                <p>فاش كتشري الماكينة من عند مورد بـ Invoice، القيد كيكون:</p>
+                <ul>
+                  <li><span class="term">Debit:</span> الأصل (Asset Account).</li>
+                  <li><span class="term">Credit:</span> المورد (Vendor Account).</li>
+                  <li><span class="term">Technical Clearing Account:</span> حساب "قنطرة" تقنية باش يضمن توازن جهة
+                    المحاسبة وجهة الأصول.</li>
+                </ul>
+
+                <h4>حسابات المصالحة (Reconciliation Accounts)</h4>
+                <p>حساب الماكينات في الميزانية كيتسمى Reconciliation Account. هاد الحساب "محمي" ما تقدرش تقيد فيه بيدك
+                  مباشرة. الطريقة الوحيدة باش يتحرك هي عبر عملية في الـ Asset Accounting.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u6l1s4c" onclick="appToggleSection('u6l1s4c')">
+              <span class="section-num">3</span>
+              <h3>التقارير الأساسية (Reporting)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u6l1s4c">
+              <div class="section-content">
+                <ul>
+                  <li><span class="term-en">Asset Balance Report:</span> كيعطيك القيمة الحالية ديال الأصول في الميزانية.
+                  </li>
+                  <li><span class="term-en">Asset History Sheet:</span> "تاريخ حياة" الماكينة في عام واحد (بشحال بدات،
+                    شنو تزاد، شنو نقص، الاهلاك، وبشحال سالات).</li>
+                  <li><span class="term-en">Asset List:</span> قائمة بكاع الأصول اللي عند الشركة دابا.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u6-l1-s4" onclick="appMarkDone('u6-l1-s4')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u6-l1-s4')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u6-l1-s4')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u8-l1-s1 ═══════════ -->
+      <div id="lesson-u8-l1-s1" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📈 الوحدة 8 – الدرس 1</div>
+          <h2>Management Accounting في SAP S/4HANA</h2>
+          <p>اكتشف عالم Controlling والتحليل الداخلي للشركة</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u8l1s1a" onclick="appToggleSection('u8l1s1a')">
+              <span class="section-num">1</span>
+              <h3>شنو هو Management Accounting (CO)؟</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u8l1s1a">
+              <div class="section-content">
+                <p>الهدف الأساسي ديالو هو تعرف <span class="term">"شكون اللي خسر الفلوس؟"</span> و <span
+                    class="term">"منين جات الأرباح؟"</span>. ماشي بحال المحاسبة المالية (<span
+                    class="term-en">FI</span>) اللي كتهتم غير بالتقارير الخارجية، الـ CO كيهتم بالتحليل الداخلي للشركة.
+                </p>
+
+                <h4>الأدوات (CO Objects)</h4>
+                <ul>
+                  <li><span class="term">Cost Centers (مراكز التكلفة):</span> هي الأقسام ديال الشركة (مثلاً قسم
+                    الحسابات، قسم التسويق). أي درهم تخلص كيمشي لمركز التكلفة المسؤول عليه.</li>
+                  <li><span class="term">Profitability Segments:</span> كنشوفو بيها الأرباح حسب السوق.</li>
+                  <li><span class="term">Projects (المشاريع):</span> بحال بناء مصنع جديد أو تنظيم معرض. كيكون عنده بداية
+                    ونهاية.</li>
+                  <li><span class="term">Internal Orders:</span> مشاريع صغيرة أو مهام محددة (مثلاً تتبع مصاريف سيارة
+                    الخدمة).</li>
+                </ul>
+
+                <h4>المستويات التنظيمية</h4>
+                <table class="content-table">
+                  <tr>
+                    <th>المستوى</th>
+                    <th>بالإنجليزية</th>
+                    <th>شنو كيعني؟</th>
+                  </tr>
+                  <tr>
+                    <td>Controlling Area</td>
+                    <td>Espace de Contrôle</td>
+                    <td>السقف الكبير ديال الـ CO</td>
+                  </tr>
+                  <tr>
+                    <td>Company Code</td>
+                    <td>Code Société</td>
+                    <td>الشركة القانونية (Bilan و CPC)</td>
+                  </tr>
+                  <tr>
+                    <td>Plant</td>
+                    <td>Site de Production</td>
+                    <td>المصنع أو البلاصة ديال الإنتاج</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u8-l1-s1" onclick="appMarkDone('u8-l1-s1')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u8-l1-s1')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u8-l1-s1')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u8-l1-s2 ═══════════ -->
+      <div id="lesson-u8-l1-s2" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📈 الوحدة 8 – الدرس 2</div>
+          <h2>الفرق بين FI و CO</h2>
+          <p>المحاسبة المالية vs المحاسبة الإدارية</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u8l1s2a" onclick="appToggleSection('u8l1s2a')">
+              <span class="section-num">1</span>
+              <h3>المحاسبة المالية (FI) vs الإدارية (CO)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u8l1s2a">
+              <div class="section-content">
+                <h4>المحاسبة المالية <span class="term-en">Financial Accounting (FI)</span></h4>
+                <p>هادي هي المحاسبة "القانونية". الهدف ديالها هو تخرج تقارير للمطالبين الخارجيين بحال الأبناك، مصلحة
+                  الضرائب، والمستثمرين.</p>
+
+                <h4>المحاسبة الإدارية <span class="term-en">Management Accounting (CO)</span></h4>
+                <p>هادي "كوزينة" الشركة. الهدف ديالها داخلي باش نعاونو الإدارة تاخذ قرارات (<span
+                    class="term-en">Decision Support</span>).</p>
+
+                <table class="content-table">
+                  <tr>
+                    <th>وجه المقارنة</th>
+                    <th>FI</th>
+                    <th>CO</th>
+                  </tr>
+                  <tr>
+                    <td>الجمهور</td>
+                    <td>خارجي (ضرائب، أبناك...)</td>
+                    <td>داخلي (مدراء، إدارة...)</td>
+                  </tr>
+                  <tr>
+                    <td>الهدف</td>
+                    <td>تقارير قانونية وموحدة</td>
+                    <td>اتخاذ قرار وتحليل المردودية</td>
+                  </tr>
+                  <tr>
+                    <td>التركيز</td>
+                    <td>الشركة ككل (Company Code)</td>
+                    <td>الأقسام، المنتجات، المشاريع</td>
+                  </tr>
+                  <tr>
+                    <td>المرونة</td>
+                    <td>مقيدة بالقوانين</td>
+                    <td>مرنة حسب احتياجات الإدارة</td>
+                  </tr>
+                </table>
+
+                <h4>أنواع Cost Objects</h4>
+                <ul>
+                  <li><span class="term">أوعية كتهز غير التكاليف:</span> Cost Centers، Manufacturing Orders</li>
+                  <li><span class="term">أوعية كتهز التكاليف والمداخيل:</span> Sales Orders، Projects (WBS Elements)
+                  </li>
+                </ul>
+
+                <h4>شنو كنستافدو من CO؟</h4>
+                <ul>
+                  <li><span class="term">Variance Analysis:</span> كتقارن بين Planned والـ Actual.</li>
+                  <li><span class="term">WIP (Work in Process):</span> حساب قيمة السلعة اللي مازال ما كملاتش.</li>
+                  <li><span class="term">COGM / COGS:</span> حساب تكلفة التصنيع وتكلفة المبيعات.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u8-l1-s2" onclick="appMarkDone('u8-l1-s2')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u8-l1-s2')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u8-l1-s2')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u8-l1-s3 ═══════════ -->
+      <div id="lesson-u8-l1-s3" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📈 الوحدة 8 – الدرس 3</div>
+          <h2>هندسة Controlling (Architecture)</h2>
+          <p>كيفاش الـ CO مبني فـ SAP S/4HANA</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u8l1s3a" onclick="appToggleSection('u8l1s3a')">
+              <span class="section-num">1</span>
+              <h3>نظام الدورة الواحدة والمكونات</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u8l1s3a">
+              <div class="section-content">
+                <h4>Single Circuit System</h4>
+                <p>هادي أهم ميزة في <span class="term-en">S/4HANA</span>. أي عملية كدار في الـ General Ledger كتمشي في
+                  نفس الوقت لـ Account Assignment في الـ CO. مثلاً: خلصتي فاكتورة ديال الضو؟ السيستيم كيسجلها كمصاريف
+                  (FI) وفي نفس الوقت كيصيفطها لـ Cost Center (CO).</p>
+
+                <h4>مكونات الـ CO</h4>
+                <ul>
+                  <li><span class="term">Overhead Cost Controlling:</span> تتبع المصاريف غير المباشرة (الإدارة، الكراء،
+                    التسويق). كيتستعملوا فيها الـ Cost Centers.</li>
+                  <li><span class="term">Product Cost Controlling:</span> "القلب" - كتحسب COGM (تكلفة صنع الدراجة) و
+                    COGS (تكلفة بيعها). كتاخد ثمن المواد (BOM) + ساعات العمل (Routing).</li>
+                  <li><span class="term">Margin Analysis:</span> هنا كنعرفو واش رابحين ولا خاسرين. كتحلل الربح حسب
+                    المنتوج، المنطقة، أو نوع الزبون.</li>
+                  <li><span class="term">Profit Center Accounting:</span> أي عملية Journal Entry خاص يكون فيها ضروري
+                    Profit Center باش السيستيم يقدر يخرج Bilan لكل وحدة بوحدها.</li>
+                </ul>
+
+                <h4>نموذج المحركات (Driver Model)</h4>
+                <p>الـ <span class="term">Driver</span> (المحرك) هو العملية اللوجستيكية (شحال من ساعة خدم الموظف). الـ
+                  <span class="term">Value</span> (القيمة) هي الثمن بالدرهم. السيستيم كيضرب "الكمية" في "الثمن المخطط
+                  له" وكيقارنها بالواقع.</p>
+
+                <div class="info-box tip">
+                  <div class="info-box-title">💡 للمهنيين</div>
+                  البيانات ولات متكاملة (Integrated). ما بقاش داك الفرق بين حسابات المحاسب وحسابات "Contrôleur de
+                  gestion". كلشي كيخرج من منبع واحد (Single Source of Truth).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u8-l1-s3" onclick="appMarkDone('u8-l1-s3')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u8-l1-s3')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u8-l1-s3')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u8-l1-s4 ═══════════ -->
+      <div id="lesson-u8-l1-s4" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📈 الوحدة 8 – الدرس 4</div>
+          <h2>الـ Universal Journal (ACDOCA)</h2>
+          <p>المعجزة التقنية اللي جمعات كولشي في جدول واحد</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u8l1s4a" onclick="appToggleSection('u8l1s4a')">
+              <span class="section-num">1</span>
+              <h3>من المشكل القديم إلى الحل السحري</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u8l1s4a">
+              <div class="section-content">
+                <h4>المشكل القديم</h4>
+                <p>زمان (قبل S/4HANA)، كانت كل "جزيرة" في SAP عندها جدول خاص بيها: FI عندها جداولها، CO عنده جداوله،
+                  Asset Accounting عندها جداولها. وملي كيوصل لخر ديال الشهر، المحاسب كيبقاو يضيع السوايع باش يتأكد باللي
+                  الأرقام مطابقة.</p>
+
+                <h4>الحل: جدول ACDOCA</h4>
+                <p>في <span class="term-en">SAP S/4HANA</span>، تجمعات هاد الجداول كاملة في جدول واحد عملاق سميته <span
+                    class="term">ACDOCA</span> - "المصدر الوحيد للحقيقة" (<span class="term-en">Single Source of
+                    Truth</span>):</p>
+                <ul>
+                  <li><span class="term-en">General Ledger (FI-GL):</span> الحسابات العامة.</li>
+                  <li><span class="term-en">Asset Accounting (FI-AA):</span> محاسبة الأصول.</li>
+                  <li><span class="term-en">Controlling (CO):</span> محاسبة التكاليف.</li>
+                  <li><span class="term-en">Profitability Analysis (CO-PA):</span> تحليل الربحية.</li>
+                  <li><span class="term-en">Material Ledger:</span> تقييم المخزون.</li>
+                </ul>
+
+                <h4>المميزات</h4>
+                <ul>
+                  <li><span class="term">لا حاجة للمطابقة:</span> الأرقام ديما مطابقة 100%.</li>
+                  <li><span class="term">Drill-down:</span> تبدا من رقم في الميزانية وتكليكي حتى توصل للأصل.</li>
+                  <li><span class="term">Segment Reporting:</span> ميزانية كاملة لكل قطاع أو Profit Center.</li>
+                  <li><span class="term">Real-time Margin Analysis:</span> ما كتحتاجش تسنى حتى يسالي الشهر.</li>
+                </ul>
+
+                <div class="info-box tip">
+                  <div class="info-box-title">🔍 للمدقق (Auditor)</div>
+                  هاد الـ Universal Journal كيعطيك ثقة كبيرة في البيانات. المسار ديال المعلومة (Audit Trail) ولا واضح
+                  ومنسجم. ما بقاش الخوف من أن معلومة تضيع بين الـ FI والـ CO.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u8-l1-s4" onclick="appMarkDone('u8-l1-s4')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u8-l1-s4')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u8-l1-s4')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u8-l1-s5 ═══════════ -->
+      <div id="lesson-u8-l1-s5" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📈 الوحدة 8 – الدرس 5</div>
+          <h2>المحاسبة المتوازية الشاملة (UPA)</h2>
+          <p>Universal Parallel Accounting - تقارير بمعايير مختلفة في نفس الوقت</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u8l1s5a" onclick="appToggleSection('u8l1s5a')">
+              <span class="section-num">1</span>
+              <h3>شنو هو Universal Parallel Accounting؟</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u8l1s5a">
+              <div class="section-content">
+                <p>هو قدرة السيستيم باش يحسب ويسجل العمليات المحاسبية بطرق مختلفة في نفس الوقت، بلا ما تضطر تعاود الخدمة
+                  يدوياً. كل طريقة كتحط في <span class="term-en">Ledger</span> خاص بيها.</p>
+
+                <h4>الحالات اللي كيعالجها</h4>
+                <ul>
+                  <li><span class="term">تعدد المعايير (Multi-GAAP):</span> كتحسب الاستهلاكات أو قيمة المخزون بطريقة في
+                    IFRS وبطريقة مغايرة في Local GAAP.</li>
+                  <li><span class="term">تعدد العملات (Multi-currency):</span> تقارير بالدرهم، بالأورو، وبالدولار في نفس
+                    الوقت.</li>
+                  <li><span class="term">اختلاف السنة المالية:</span> بعض البلدان السنة المالية ديالهم ما كاتبداش في شهر
+                    1.</li>
+                </ul>
+
+                <h4>أمثلة تطبيقية</h4>
+                <ul>
+                  <li><span class="term">الأصول (Capitalization):</span> قيمة الأصل تقدر تكون مختلفة في Ledger 1 على
+                    Ledger 2 بسبب اختلاف القوانين.</li>
+                  <li><span class="term">المخزون:</span> Standard Price لكل Ledger + Actual Costing للدول اللي كتفرضو.
+                  </li>
+                  <li><span class="term">الربحية:</span> ربح صافي دقيق حسب كل معيار محاسبي في الحين.</li>
+                </ul>
+
+                <div class="info-box">
+                  <div class="info-box-title">📝 الخلاصة</div>
+                  هاد الـ UPA كيهنيك من العمليات اليدوية ديال "التسوية" في نهاية السنة. كلشي كيكون محسوب ومسجل بشكل
+                  متوازي. الـ Controlling ولا كيعرف الـ Ledgers كاملين وكيدير الحسابات لكل واحد فيهم بوحده.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u8-l1-s5" onclick="appMarkDone('u8-l1-s5')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u8-l1-s5')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u8-l1-s5')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u8-l1-s6 ═══════════ -->
+      <div id="lesson-u8-l1-s6" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📈 الوحدة 8 – الدرس 6</div>
+          <h2>Profit Center Accounting</h2>
+          <p>كيفاش كنسيرو شركة كبيرة كأنها مجموعة ديال الشركات الصغيرة</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u8l1s6a" onclick="appToggleSection('u8l1s6a')">
+              <span class="section-num">1</span>
+              <h3>Profit Center و Investment Center</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u8l1s6a">
+              <div class="section-content">
+                <p><span class="term">Profit Center</span> هو وحدة تنظيمية داخل الشركة (بحال فرع، مصنع، أو خط إنتاج)
+                  اللي كنعاملوها كأنها مستقلة ماليًا. الهدف هو نحسبو ليها الأرباح والخسائر بوحدها، ويكون عندها Bilan و
+                  CPC خاص.</p>
+
+                <h4>الفرق بين Margin Analysis و PCA</h4>
+                <ul>
+                  <li><span class="term">Margin Analysis:</span> كيركز على السوق والزبناء (واش رابحين مع الزبون X؟)</li>
+                  <li><span class="term">Profit Center Accounting:</span> كيركز على الوحدات الداخلية (واش فرع الدار
+                    البيضاء كيدخل الفلوس؟)</li>
+                </ul>
+
+                <h4>من Profit Center إلى Investment Center</h4>
+                <p>الـ Profit Center ما كيحسبش غير المداخيل والمصاريف، بل كيقدر يهز حتى <span class="term-en">Balance
+                    Sheet items</span> بحال:</p>
+                <ul>
+                  <li>الأصول الثابتة (<span class="term-en">Fixed Assets</span>)</li>
+                  <li>المخزون (<span class="term-en">Stocks</span>)</li>
+                  <li>الديون والمستحقات (<span class="term-en">Payables & Receivables</span>)</li>
+                </ul>
+                <p>هادشي كيخلينا نحسبو مؤشرات مالية قوية بحال:</p>
+                <ul>
+                  <li><span class="term">ROI</span> (Return on Investment): العائد على الاستثمار.</li>
+                  <li><span class="term">Cash Flow:</span> التدفقات النقدية الخاصة بدك الفرع.</li>
+                </ul>
+
+                <div class="info-box tip">
+                  <div class="info-box-title">🔍 للمدقق</div>
+                  بفضل خاصية Document Splitting في S/4HANA، السيستيم كيضمن باللي أي "Ecriture" كدار كتكون متوازنة على
+                  مستوى الـ Profit Center. هادشي كيسهل المراجعة والتدقيق لكل قطاع (Segment Reporting) حسب معايير IFRS و
+                  US GAAP.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u8-l1-s6" onclick="appMarkDone('u8-l1-s6')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u8-l1-s6')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u8-l1-s6')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u8-l3-s1 ═══════════ -->
+      <div id="lesson-u8-l3-s1" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📈 الوحدة 8 – الدرس 7</div>
+          <h2>Core Data Service (CDS) Views</h2>
+          <p>"المحرك" اللي كيخلي التقارير سريعة وذكية</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u8l3s1a" onclick="appToggleSection('u8l3s1a')">
+              <span class="section-num">1</span>
+              <h3>علاش CDS Views وهيكل VDM</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u8l3s1a">
+              <div class="section-content">
+                <p>زمان، كانت قواعد البيانات معقدة والمبرمجين كيكتبوا كود طويل (حتى لـ 70%) غير باش يحسنوا الأداء. مع
+                  <span class="term-en">SAP HANA</span>، الـ CDS Views جات باش تبسط العملية وتخلي الكود "خفيف" ومنظم.
+                </p>
+
+                <h4>هيكل البيانات الافتراضي (VDM)</h4>
+                <p>تخيل الـ VDM بحال طبقات ديال البني، كل طبقة عندها دور:</p>
+                <ul>
+                  <li><span class="term">الطبقة السفلية (Data Lake):</span> الجداول الأصلية (Database Tables) فين محطوطة
+                    المعلومة خام.</li>
+                  <li><span class="term">الطبقة الوسطى (Interface Views):</span>
+                    <ul>
+                      <li><span class="term-en">Basic Views:</span> كتقرأ من الجدول نيشان وكتسمي الحقول بأسماء مفهومة.
+                      </li>
+                      <li><span class="term-en">Composite Views:</span> كتدير الحسابات، كتجمع جداول (Join)، وكتصفي
+                        البيانات (Filter). هادي "Analytical Cube".</li>
+                    </ul>
+                  </li>
+                  <li><span class="term">الطبقة العليا (Consumption Views):</span> الواجهة اللي كيشوفها المستخدم في
+                    Fiori Apps.</li>
+                </ul>
+
+                <h4>أدوات التقارير</h4>
+                <ul>
+                  <li><span class="term">Custom Analytical Queries:</span> تصاوب تقارير بلا ما تعرف لغة البرمجة.</li>
+                  <li><span class="term">Semantic Tags:</span> علامات كنعطيوها للحسابات (مثلاً: "خزينة"، "ديون") باش
+                    التقارير تبقى خدامة واخا تزيد حسابات جديدة.</li>
+                  <li><span class="term">KPI:</span> مؤشرات الأداء كتبان على شكل مبيانات (Charts) في الـ Fiori
+                    Launchpad.</li>
+                </ul>
+
+                <div class="info-box">
+                  <div class="info-box-title">💻 للمطور</div>
+                  الـ CDS Views كتشبه بزاف لـ Data Access Objects (DAO) في مكتبة Room؛ هي اللي كتعطيك واجهة سهلة باش
+                  تتعامل مع قاعدة البيانات بلا ما تدخل في تعقيدات الـ SQL.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u8-l3-s1" onclick="appMarkDone('u8-l3-s1')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u8-l3-s1')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u8-l3-s1')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u8-l3-s2 ═══════════ -->
+      <div id="lesson-u8-l3-s2" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">📈 الوحدة 8 – الدرس 8</div>
+          <h2>التقارير المدمجة (Embedded Reporting)</h2>
+          <p>كيفاش التقارير ولات مدمجة وسط الخدمة اليومية</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u8l3s2a" onclick="appToggleSection('u8l3s2a')">
+              <span class="section-num">1</span>
+              <h3>أنواع التقارير في SAP S/4HANA</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u8l3s2a">
+              <div class="section-content">
+                <h4>1. صفحات مراجعة مراكز التكلفة <span class="term-en">Cost Centers Review Booklet</span></h4>
+                <p>أداة مبسطة مخصصة للمحاسبين: كتقارن بين المصاريف الحقيقية (<span class="term-en">Actual</span>) واللي
+                  كانت مخططة (<span class="term-en">Plan</span>).</p>
+
+                <h4>2. صفحات القوائم التحليلية <span class="term-en">Analytical List Pages (ALP)</span></h4>
+                <p>تقارير "ذكية" كتجمع بين الأرقام والمبيانات. كتعاونك تعرف "السبب الرئيسي" (<span class="term-en">Root
+                    Cause</span>) لشي مشكل.</p>
+
+                <h4>3. مؤشرات الأداء الذكية <span class="term-en">SAP Smart Business KPIs</span></h4>
+                <p>المربعات (<span class="term-en">Tiles</span>) اللي كتشوفهم في واجهة Fiori أول ما كتحل السيستيم. <span
+                    class="term-en">Ticker</span> كيعطيك الرقم المهم، و<span class="term-en">Drill-down</span> كيدخلك
+                  لتفاصيل كثر.</p>
+
+                <h4>4. التقارير متعددة الأبعاد <span class="term-en">Multidimensional Reporting</span></h4>
+                <p>"الجنة" ديال المحاسبين! كتشبه لـ <span class="term-en">Pivot Tables</span> في Excel. تقدر تجر (<span
+                    class="term-en">Drag and Drop</span>) أي معلومة والتقرير كيتحدث في الحين.</p>
+
+                <h4>5. صفحات النظرة العامة <span class="term-en">SAP Fiori Overview Pages</span></h4>
+                <p>"لوحة قيادة" (<span class="term-en">Cockpit</span>) كتحتوي على مجموعة ديال البطاقات (<span
+                    class="term-en">Cards</span>)، كل بطاقة فيها معلومة مختصرة.</p>
+
+                <h4>6. التقارير المخصصة <span class="term-en">Custom CDS Views & Queries</span></h4>
+                <p>تقدر تربط بين جداول مختلفة (مثلاً جدول المحاسبة ACDOCA مع جداول معلومات الزبناء) باش تخرج تقرير مخصص
+                  بلا كود.</p>
+
+                <div class="info-box tip">
+                  <div class="info-box-title">🎉 خلاصة الوحدة</div>
+                  دابا كملتي كاع الدروس! التحليل ولا "مدمج" وسط الخدمة اليومية. ما بقاش التدقيق كيتسنى حتى لخر العام؛
+                  دابا التقارير المدمجة كتخليك تراقب كلشي "Live".
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u8-l3-s2" onclick="appMarkDone('u8-l3-s2')">☐ وضع علامة
+          كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u8-l3-s2')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNav('home')">🏠 العودة للرئيسية</button>
+        </div>
+      </div>
+
+    </div><!-- /.main-content -->
+  </div><!-- /.app-container -->
+
+  <script src="app.js"></script>
+</body>
+
+</html>
