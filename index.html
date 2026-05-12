@@ -80,6 +80,21 @@
           </div>
         </div>
 
+        <!-- Unit 4 -->
+        <div class="nav-unit">
+          <div class="nav-unit-header expanded" id="nav-unit-header-4" onclick="appToggleUnit(4)">
+            <span>💰</span>
+            <span>الوحدة 4: Receivables Management</span>
+            <span class="chevron">◀</span>
+          </div>
+          <div class="nav-unit-items expanded" id="nav-unit-items-4">
+            <div class="nav-lesson" data-id="u4-l1-s1" onclick="appNav('u4-l1-s1')"><span
+                class="lesson-icon"></span>إدارة الحسابات المدينة</div>
+            <div class="nav-lesson" data-id="u4-l1-s2" onclick="appNav('u4-l1-s2')"><span
+                class="lesson-icon"></span>الحسابات العامة والـ KPIs</div>
+          </div>
+        </div>
+
         <!-- Unit 6 -->
         <div class="nav-unit">
           <div class="nav-unit-header expanded" id="nav-unit-header-6" onclick="appToggleUnit(6)">
@@ -149,7 +164,7 @@
             <div class="stat-label">مكتملة</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="stat-total">18</div>
+            <div class="stat-number" id="stat-total">20</div>
             <div class="stat-label">دروس</div>
           </div>
           <div class="stat-card">
@@ -176,6 +191,18 @@
             <div class="unit-card-info">
               <h3>Outlining Processes in Payables Management</h3>
               <p>إدارة الموردين، Business Partner، دورة حياة الفاتورة، والذكاء الاصطناعي</p>
+              <div class="unit-card-meta">
+                <span>📖 2 دروس</span>
+              </div>
+            </div>
+            <span class="unit-card-arrow">◀</span>
+          </div>
+
+          <div class="unit-card" onclick="appNav('u4-l1-s1')">
+            <div class="unit-card-num">4</div>
+            <div class="unit-card-info">
+              <h3>Outlining Processes in Receivables Management</h3>
+              <p>إدارة الحسابات المدينة، Business Partner، الفواتير، التسوية، والـ KPIs</p>
               <div class="unit-card-meta">
                 <span>📖 2 دروس</span>
               </div>
@@ -951,6 +978,236 @@
         <div class="lesson-nav">
           <button class="lesson-nav-btn" onclick="appPrevLesson('u2-l1-s2')">→ الدرس السابق</button>
           <button class="lesson-nav-btn primary" onclick="appNextLesson('u2-l1-s2')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u4-l1-s1 ═══════════ -->
+      <div id="lesson-u4-l1-s1" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">💰 الوحدة 4 – الدرس 1</div>
+          <h2>إدارة الحسابات المدينة (Receivables Management)</h2>
+          <p>شرح إدارة الحسابات المدينة في SAP، مهام المحاسب، ومفهوم Business Partner</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u4l1s1a" onclick="appToggleSection('u4l1s1a')">
+              <span class="section-num">1</span>
+              <h3>مهام محاسب الـ Receivables</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u4l1s1a">
+              <div class="section-content">
+                <p>هذا الدرس كايشرح الدور ديال المحاسب المكلف بمتابعة فلوس الشركة اللي كايسالوها للكليان (Accounts Receivable). المحاسب كيدير بزاف ديال الحوايج:</p>
+                <ul>
+                  <li><span class="term">مراقبة الأداءات (Payments):</span> كايتأكد باللي الفواتير (Invoices) صحيحة وكايتبع واش تخلصات.</li>
+                  <li><span class="term">تصحيح الأخطاء (Posting Correction):</span> إذا كان شي غلط في الثمن أو المعلومات، كايصححو في السيستيم.</li>
+                  <li><span class="term">التقارير (Reporting):</span> كايجبد تقارير باش يعرف شحال ديال الفلوس مزال برا (Open Items) وشحال الوقت تعطلوا الكليان في الخلاص.</li>
+                  <li><span class="term">المطالبة بالأداء (Dunning):</span> إذا تعطل الكليان، السيستيم كايصيفط ليه رسالة تذكير (Dunning Letter).</li>
+                  <li><span class="term">التسبيقات (Down Payments):</span> إذا خلص الكليان شي بركة قبل ما توصلو السلعة.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u4l1s1b" onclick="appToggleSection('u4l1s1b')">
+              <span class="section-num">2</span>
+              <h3>مفهوم الـ Business Partner في SAP</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u4l1s1b">
+              <div class="section-content">
+                <p>في SAP، أي واحد كانتعاملو معاه (كليان، فورنيسور، أو بجوج) كايتسما Business Partner (BP). باش نكرييو كليان جديد، كاينين 3 ديال الخطوات ضرورية:</p>
+                <ul>
+                  <li><span class="term">Category (الفئة):</span> واش هو شخص (Person)، شركة (Organization)، أو مجموعة (Group).</li>
+                  <li><span class="term">Role (الدور):</span> كأنحددوا واش هو كليان (Customer) باش يتحلو ليه الخانات ديال المحاسبة والبيع.</li>
+                  <li><span class="term">Grouping (المجموعة):</span> هادي كتحكم في "الرقم" اللي غادي يتعطى لهاد الكليان في السيستيم (واش رقم أوتوماتيكي أو يدوي).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u4l1s1c" onclick="appToggleSection('u4l1s1c')">
+              <span class="section-num">3</span>
+              <h3>دورة حياة الفاتورة (Customer Invoice Lifecycle)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u4l1s1c">
+              <div class="section-content">
+                <p>الفاتورة كاتدوز من مراحل:</p>
+                <ul>
+                  <li><span class="term">الإنشاء (Creation):</span> كايتدار من السلعة اللي تبااعت (Sales Order).</li>
+                  <li><span class="term">التسجيل (Posting):</span> هنا الفاتورة كاتولي "وثيقة مالية" (Journal Entry) وكايدخلوا الفلوس في الحسابات.</li>
+                  <li><span class="term">الأداء (Payment):</span> الكليان كايخلص.</li>
+                  <li><span class="term">التسوية (Clearing):</span> فاش كاتخلص الفاتورة، مكاتبقاش "مفتوحة" (Open) وكاتولي "مخلصة" (Cleared).</li>
+                </ul>
+                
+                <h4>مكونات الوثيقة المالية (Journal Entry)</h4>
+                <p>أي فاتورة في SAP كاتقسم لـ 3 ديال البلايص:</p>
+                <ol>
+                  <li><span class="term">الرأس (Header):</span> فيه المعلومات العامة (تاريخ الفاتورة، نوع العملة، الشركة).</li>
+                  <li><span class="term">الأسطر (Line Items):</span> فيها الحسابات والمبالغ (شحال كايسالوا للكليان، وأي حساب في "دفتر الأستاذ" G/L غادي يتأثر).</li>
+                  <li><span class="term">الضرائب (Tax Area):</span> كاع المعلومات على الضريبة (TVA) والحسابات ديالها.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u4l1s1d" onclick="appToggleSection('u4l1s1d')">
+              <span class="section-num">4</span>
+              <h3>الذكاء الاصطناعي والمراسلات في SAP</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u4l1s1d">
+              <div class="section-content">
+                <h4>الذكاء الاصطناعي (SAP Business AI)</h4>
+                <ul>
+                  <li><span class="term">Cash Application:</span> السيستيم كايعرف بوحدو الأداء اللي جا من البنكة ديال فاتورة، وكايسدها بلا ما يتدخل المحاسب يدويًا.</li>
+                  <li><span class="term">Collections Management:</span> كايعاون المحاسب باش يعرف شكون هما الكليان اللي "فيهم الخطر" ولازم يتصل بيهم الأولين باش يخلصوا.</li>
+                </ul>
+                
+                <h4>المراسلات (Correspondence)</h4>
+                <p>هادي هي الطريقة الرسمية باش كاتهضر الشركة مع الكليان:</p>
+                <ul>
+                  <li><span class="term">Account Statement:</span> كشف حساب كايصيفطوه للكليان باش يشوف شنو خلص وشنو مزال عليه.</li>
+                  <li><span class="term">Balance Confirmation:</span> تأكيد الرصيد، باش يتأكدوا باللي الحسابات اللي عند الشركة هي نفسها اللي عند الكليان.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u4l1s1e" onclick="appToggleSection('u4l1s1e')">
+              <span class="section-num">5</span>
+              <h3>Account Payable vs Receivables</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u4l1s1e">
+              <div class="section-content">
+                <p>بالنسبة لـ Account Payable (AP)، يعني الحسابات الدائنة (الفلوس اللي الشركة ديالك خاصها تخلصها لـ les fournisseurs)، دورة حياة الفاتورة كاتمشي بالعكس ديال الـ Receivables. هاد العملية كاتسما غالباً Procure-to-Pay (P2P).</p>
+                
+                <h4>مراحل دورة حياة الفاتورة في الـ AP:</h4>
+                <ol>
+                  <li><span class="term">الاستلام والتسجيل (Invoice Receipt & Entry):</span> كايتوصل القسم ديال المحاسبة بالفاتورة وكايتم إدخال المعلومات في SAP.</li>
+                  <li><span class="term">التحقق والمطابقة (Validation & Matching):</span> المطابقة الثلاثية (3-Way Matching): واش طلبنا السلعة (PO)؟ واش وصلات للمخزن (GR)؟ واش الثمن والكمية في الفاتورة صحاح؟</li>
+                  <li><span class="term">الموافقة (Approval Workflow):</span> إلا كان شي فرق، السيستيم كايدير Block وخاص Manager يفك هاد الـ Block ويوافق على الخلاص.</li>
+                  <li><span class="term">حجز الدفع (Payment Run / F110):</span> كايتستعمل برنامج الأداء الآلي (F110) باش يجبد الفواتير اللي وصل وقت خلاصهم.</li>
+                  <li><span class="term">التنفيذ والأداء (Payment Execution):</span> السيستيم كايخرج ملف للبنكة أو كايطبع "شيك" وكايصيفط Payment Advice للفورنيسور.</li>
+                  <li><span class="term">التسوية والإغلاق (Clearing & Archiving):</span> الفاتورة كاتولي Cleared، المبالغ كاتنقص من حساب الفورنيسور، والفاتورة كاتأرشف.</li>
+                </ol>
+                
+                <div class="info-box tip">
+                  <div class="info-box-title">💡 ملخص الفرق</div>
+                  في الـ Receivables: نتا اللي كاتصيفط الفاتورة وكاتسنى الفلوس تدخل.<br>
+                  في الـ Payable: الفورنيسور هو اللي كايصيفط ليك الفاتورة ونتا كاتفيريفيها قبل ما تخرج الفلوس.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u4-l1-s1" onclick="appMarkDone('u4-l1-s1')">☐ وضع علامة كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u4-l1-s1')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u4-l1-s1')">الدرس التالي ←</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LESSON: u4-l1-s2 ═══════════ -->
+      <div id="lesson-u4-l1-s2" class="view-page lesson-view hidden">
+        <div class="lesson-header">
+          <div class="lesson-badge">💰 الوحدة 4 – الدرس 2</div>
+          <h2>الحسابات العامة والـ KPIs</h2>
+          <p>كيفاش كاترتبط حسابات الكليان بالـ General Ledger والتقارير المالية</p>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u4l1s2a" onclick="appToggleSection('u4l1s2a')">
+              <span class="section-num">1</span>
+              <h3>حساب التسوية (Reconciliation Account)</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u4l1s2a">
+              <div class="section-content">
+                <p>كل كليان عندو حساب خاص بيه (Sub-ledger)، ولكن الشركة خاصها نظرة عامة على كاع الفلوس اللي كايسالوها للكليان في دقة وحدة.</p>
+                <ul>
+                  <li><span class="term">Reconciliation Account:</span> هو "الخيط" اللي كايجمع الكليان مع الـ General Ledger (G/L).</li>
+                  <li>أي حاجة تقيدات في حساب الكليان (مثلاً 1000 درهم)، كاتمشي أوتوماتيكياً لهاد الحساب في الـ G/L.</li>
+                  <li><span class="term">قاعدة مهمة:</span> ما تقدرش تقيد شي حاجة "مباشرة" في حساب التسوية؛ السيستيم هو اللي كايجيبها من حساب الكليان.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u4l1s2b" onclick="appToggleSection('u4l1s2b')">
+              <span class="section-num">2</span>
+              <h3>توزيع مبالغ الفاتورة والتقارير المالية</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u4l1s2b">
+              <div class="section-content">
+                <h4>كيفاش كاتوزع مبالغ الفاتورة في الحسابات؟</h4>
+                <ol>
+                  <li><span class="term">المبلغ الإجمالي (Gross Amount):</span> كايتقيد في حساب الكليان (Debit) ومنو كايطلع لحساب التسوية في الأصول (Assets).</li>
+                  <li><span class="term">المبلغ الصافي (Net Amount):</span> كايتحسب "أرباح" (Revenue) وكايتقيد في قائمة الأرباح والخسائر (P&L).</li>
+                  <li><span class="term">الضريبة (Tax):</span> كاتمشي مباشرة لحساب خاص بالضريبة على المبيعات (Output Tax).</li>
+                </ol>
+                
+                <h4>التقارير المالية (Financial Statements)</h4>
+                <ul>
+                  <li><span class="term">Balance Sheet (الميزانية):</span> حساب التسوية (الديون اللي كايسالوا للكليان) كايطلع في جيهة الـ Assets (الأصول).</li>
+                  <li><span class="term">P&L Statement (قائمة الأرباح والخسائر):</span> المبالغ الصافية كاتطلع في جيهة الـ Revenues (المداخيل).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <div class="section-card">
+            <div class="section-card-header expanded" id="section-header-u4l1s2c" onclick="appToggleSection('u4l1s2c')">
+              <span class="section-num">3</span>
+              <h3>مؤشرات الأداء (KPIs) في SAP Fiori</h3>
+              <span class="expand-icon">▼</span>
+            </div>
+            <div class="section-card-body expanded" id="section-body-u4l1s2c">
+              <div class="section-content">
+                <p>SAP كايعطي للمحاسب تطبيقات (Apps) واجدة باش يراقب الخدمة بلا ما يصدع راسو بالحسابات اليدوية:</p>
+                <ul>
+                  <li><span class="term-en">Accounts Receivable Overview:</span> هادي هي "اللوحة" (Dashboard) اللي فيها كاع المعلومات المهمة في شاشة واحدة.</li>
+                  <li><span class="term-en">Days Sales Outstanding (DSO):</span> كايعطيك "المعدل" ديال شحال كايتعطلوا الكليان باش يخلصوك (مثلاً واش كايخلصوا في 30 يوم ولا 45 يوم).</li>
+                  <li><span class="term-en">Receivable Aging (التقادم):</span> كايقسم ليك الكليان على حساب شحال تعطلوا (مثلاً: اللي فايتين 30 يوم، اللي فايتين 60 يوم...).</li>
+                  <li><span class="term-en">Overdue Receivables:</span> كايوريك شكون هما الكليان اللي "فاتوا الوقت" ديال الخلاص وباش تعرف شكون اللي فيه الريسك بزاف.</li>
+                </ul>
+                
+                <div class="info-box tip">
+                  <div class="info-box-title">💡 خلاصة الدرس</div>
+                  بفضل SAP كتقدر تتبع الخيط من الكليان حتى لآخر ورقة في المحاسبة ديال الشركة بسهولة، والمراقبة كتولي ساهلة باستعمال الـ KPIs والتقارير الأوتوماتيكية.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mark-done-btn" id="done-btn-u4-l1-s2" onclick="appMarkDone('u4-l1-s2')">☐ وضع علامة كمكتمل</button>
+        <div class="lesson-nav">
+          <button class="lesson-nav-btn" onclick="appPrevLesson('u4-l1-s2')">→ الدرس السابق</button>
+          <button class="lesson-nav-btn primary" onclick="appNextLesson('u4-l1-s2')">الدرس التالي ←</button>
         </div>
       </div>
 
